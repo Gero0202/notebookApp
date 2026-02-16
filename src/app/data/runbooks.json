@@ -1,0 +1,311 @@
+[
+  {
+    "id": "wifi-no-connection",
+    "title": "WiFi no conecta",
+    "category": "wifi",
+    "symptoms": "El equipo no obtiene IP o no navega",
+    "checklist": [
+      "Verificar adaptador habilitado",
+      "ipconfig /all",
+      "ping gateway",
+      "Olvidar y reconectar red"
+    ],
+    "commands": ["ipconfig /all", "ping 192.168.1.1"],
+    "notes": "Revisar DHCP o AP saturado",
+    "tags": ["wifi", "ip", "conexion"]
+  },
+  {
+    "id": "dns-not-resolving",
+    "title": "DNS no resuelve",
+    "category": "dns",
+    "symptoms": "No abre sitios por nombre",
+    "checklist": [
+      "nslookup dominio",
+      "ping 8.8.8.8",
+      "Revisar DNS configurado"
+    ],
+    "commands": ["nslookup google.com"],
+    "notes": "Posible problema de DNS interno",
+    "tags": ["dns", "red"]
+  },
+  {
+  "id": "post-armado-pc",
+  "title": "POST ARMADO",
+  "category": "pc",
+  "symptoms": "Procedimiento post armado de PC para configuracion de BIOS en Ryzen e Intel",
+  "checklist": [
+    "Ryzen (BIOS): Ez mode: Setear la hora",
+    "Ryzen (BIOS): Ez mode: Verificar que detecte todos los componentes ( dentro de Ez mode)",
+    "Ryzen (BIOS): Ez mode: Chequear temperatura ( para ver si el disipador funciona )",
+    "Ryzen (BIOS): Ez mode: Chequear ventiladores ( FAN profile )",
+    "Ryzen (BIOS): En modo avanzado: Ai Tweaker : la opcion “Ai overclock Turner” ponerlo en DOCP 1 , para quela RAM de su maximo potencial",
+    "Ryzen (BIOS): En modo avanzado: Advanced: TPM activado; ya viene por defecto activado pero si no activar la opcion de “Security Device Support”",
+    "Ryzen (BIOS): En modo avanzado: Boot: que la opcion sea la que nosotros queremos iniciar la instalacion de windows",
+    "Intel ( BIOS ): Ez mode: Setear la hora",
+    "Intel ( BIOS ): Ez mode: Verificar que detecte todos los componentes ( dentro de Ez mode)",
+    "Intel ( BIOS ): Ez mode: Chequear temperatura ( para ver si el disipador funciona )",
+    "Intel ( BIOS ): Ez mode: Chequear ventiladores ( FAN profile )",
+    "Intel ( BIOS ): Advanced mode: Air tweaker: la opcion de Ai overclock turner ponerla en XMP 1 ( maximizar potencial de RAM )",
+    "Intel ( BIOS ): Advanced mode: Dentro de air tweaker hay una opcion que se llama ASUS MultiCore Enhacement : ponerla en Enabled - Remove All Limits ; esto sirve para potenciar el intel ( 2023 )",
+    "Intel ( BIOS ): Advanced mode: NO SE HACE LO DE TPM EN INTEL",
+    "Intel ( BIOS ): Advanced mode: Boot: que la opcion sea la que nosotros queremos iniciar la instalacion de windows"
+  ],
+  "commands": [],
+  "notes": "",
+  "tags": ["bios", "post armado", "ryzen", "intel", "hardware"]
+},
+{
+  "id": "windows-usb-instalacion",
+  "title": "WINDOWS USB ( 16gb )",
+  "category": "pc",
+  "symptoms": "",
+  "checklist": [
+    "buscar en google y descargar “Crear soportes de instalación de windows 11”",
+    "Ejecutarlo y ponerlo al pendrive",
+    "Instalacion en compu nueva:",
+    "idiomda , formato y hora , teclado lationamericano",
+    "Instalar ahora",
+    "“No tengo una clave de producto”",
+    "Seleccionar windows 11 pro",
+    "Aceptar terminos",
+    "Tipo de instalacion : Personalizada",
+    "Elegir disco y siguiente",
+    "Seleccionar las cosas basicas",
+    "Nombre al dispositivo",
+    "Conectar a red",
+    "Uso laboral",
+    "Cuando pide email entrar a “opciones de inicio de sesiones” y entrar con “union a un dominio como alternativa”",
+    "Elegir nombre",
+    "Sin contraseña",
+    "Desactivar todas las opciones",
+    "Listo ✅ y seguimos con drivers :",
+    "Drivers :",
+    "click derecho al boton de inicio",
+    "Admnisitracion de dispositivos",
+    "Fijarse si falta algun controlador de diapositivos",
+    "Si faltan alguno ir a la pagina de LA PLACA MADRE y su modelo",
+    "Ir al apartado de soporte",
+    "Ir al apartado de Driver",
+    "Descargar lo necesario"
+  ],
+  "commands": [],
+  "notes": "",
+  "tags": ["windows", "instalacion", "usb"]
+},
+{
+  "id": "windows11-requisitos-error",
+  "title": "Error de “este equipo no cumple actualmente con los requisitos del sistema windows 11”",
+  "category": "pc",
+  "symptoms": "",
+  "checklist": [
+    "en la ventana del error apretar en la cruz y se reinicia",
+    "Configurar todo hasta la parte donde seleccionamos “Instalar windows 11” y tildar la opcion de “Acepto que se elimine todo, incluidos los archivos… etc”",
+    "En esa misma pantalla SHIFT + F10",
+    "En el cmd poner: REGEDIT",
+    "Ingresar en HKEY_LOCAL_MACHINE",
+    "Ingresar en SYSTEM",
+    "Ir a la carpeta de SETUP",
+    "click derecho a la carpeta de SETUP y seleccionar “Nuevo” y luego “Clave”",
+    "Nombrar como “LabConfig”",
+    "Seleccionar la carpeta creada y en la parte blanco apretar click derecho , “Nuevo” y “Valor de DWORD (32 bits)” y nombrarlo “BypassTPMCheck”",
+    "Otra vez el proceso anterior de crear un “Valor de DWORD (32 bits)” y nombrarlo “BypassSecureBootCheck”",
+    "Una vez creado ambos documentos dar doble click y cambiar donde dice “informacion de valor” poner el numero 1 ( en ambos )",
+    "Cerrar ventanas y continuar con el proceso de instalacion"
+  ],
+  "commands": ["REGEDIT"],
+  "notes": "",
+  "tags": ["windows", "windows11", "requisitos", "instalacion"]
+},
+{
+  "id": "no-aparece-wifi-pc",
+  "title": "Error : “No aparece wifi en pc”",
+  "category": "wifi",
+  "symptoms": "",
+  "checklist": [
+    "Barra de busqueda buscar “Servicios”",
+    "Buscar “configuración automática de WLAN”",
+    "En general, el tipo de inicio tiene que estar en “Automático”",
+    "Si seguimos sin wifi hacemos lo siguiente:",
+    "Barra de busqueda: “administrador de dispositivos “",
+    "Adaptadores de red",
+    "Seleccionar el nuestro, click derecho, propiedades",
+    "En la pestaña de “administración de energía “",
+    "La opcion de “Permitir que el equipo apague este dispositivo para ahorrar energía ” este DESACTIVADA",
+    "Si seguimos sin wifi hacemos lo siguiente:",
+    "Barra buscamos msconfig, pulsamos en configuración del sistema",
+    "En pestaña servicios nos aseguramos que esten todos activos"
+  ],
+  "commands": ["msconfig"],
+  "notes": "",
+  "tags": ["wifi", "windows", "adaptador"]
+},
+{
+  "id": "wifi-conectado-sin-internet",
+  "title": "Error “Wifi conectado pero sin internet”",
+  "category": "wifi",
+  "symptoms": "",
+  "checklist": [
+    "click derecho al icono dered en barra de tarea",
+    "Config de internet y red",
+    "Opcion wifi",
+    "Propiedades de la red",
+    "Puerta de enlace es siempre la numero 1 !! ( es decir el 192.168.0.1 )",
+    "Editar",
+    "Si no funciona :",
+    "“ipconfig /?” Para ver todos los comandos",
+    "Hacer la siguiente linea :",
+    "ipconfig /release (libera la direccion IPv4 para el adaptador esoecificado )",
+    "ipconfig /renew ( renueva la direccion IPv4 para el adaptador especificado)",
+    "ipconfig /flushdns ( purga la memoria cache de resolucion DNS)"
+  ],
+  "commands": [
+    "ipconfig /?",
+    "ipconfig /release",
+    "ipconfig /renew",
+    "ipconfig /flushdns"
+  ],
+  "notes": "",
+  "tags": ["wifi", "internet", "ipconfig", "dns"]
+},
+{
+  "id": "wifi-no-se-completa",
+  "title": "Error “la conexion wifi no llega a completarse”",
+  "category": "wifi",
+  "symptoms": "",
+  "checklist": [
+    "mirar fisicamente el AP si tiene luces y demas",
+    "Configurar el AP para modo bridge"
+  ],
+  "commands": [],
+  "notes": "",
+  "tags": ["wifi", "ap", "conexion"]
+},
+{
+  "id": "ipconfig-comandos",
+  "title": "IPCONFIG COMANDOS",
+  "category": "commands",
+  "symptoms": "",
+  "checklist": [
+    "ipconfig: resumen de la configuración de todos los dispositivos en red activos",
+    "ipconfig /all : informacion detallada",
+    "ipconfig /release : libera direccion IP actual que teha asignado al router",
+    "ipconfig /renew : solicta una nueva direccion IP al servidor DHCP",
+    "ipconfig /displaydns : muestra contenido de la memoria cache de resolucion DNS",
+    "ipconfig /flushdns : vacia y restablece la cache de resolucion DNS"
+  ],
+  "commands": [
+    "ipconfig",
+    "ipconfig /all",
+    "ipconfig /release",
+    "ipconfig /renew",
+    "ipconfig /displaydns",
+    "ipconfig /flushdns"
+  ],
+  "notes": "",
+  "tags": ["ipconfig", "red", "comandos", "dns"]
+},
+{
+  "id": "nslookup-comando",
+  "title": "NSLOOKUP",
+  "category": "commands",
+  "symptoms": "",
+  "checklist": [
+    "“nslookup nombre.de.app” : te dice que ip tiene ese nombre:",
+    "Devuelve IP = DNS Ok",
+    "No encuentra = DNS caido",
+    "IP rara = registro mal"
+  ],
+  "commands": ["nslookup nombre.de.app"],
+  "notes": "Sirve para diagnosticar problemas de resolucion DNS y verificar si un nombre de dominio apunta correctamente.",
+  "tags": ["dns", "nslookup", "comandos", "diagnostico"]
+},
+{
+  "id": "telnet-comando",
+  "title": "TELNET",
+  "category": "commands",
+  "symptoms": "",
+  "checklist": [
+    "“telnet [IP/Host] [Puerto]” : intenta establecer una conexcion TCP completo con un puerto especifico",
+    "El pingo funciona per la web no csrga.",
+    "se usa telnet al puerto 443. Si falla esta",
+    "bloqueado por un firewall"
+  ],
+  "commands": ["telnet [IP/Host] [Puerto]"],
+  "notes": "Se usa para comprobar conectividad a puertos especificos (por ejemplo HTTP/HTTPS, bases de datos o servicios internos).",
+  "tags": ["telnet", "tcp", "puertos", "red"]
+},
+{
+  "id": "ping-diagnostico",
+  "title": "PING",
+  "category": "commands",
+  "symptoms": "",
+  "checklist": [
+    "ping 127.0.0.1 (Localhost): Esta no es tu IP de Internet ni la del router. Es una dirección especial llamada \"bucle de retorno\". Sirve para verificar que el software de red de tu sistema operativo esté funcionando. Si este ping falla, el problema es el software de tu PC (drivers o sistema).",
+    "ping [Tu Dirección IPv4]: Esta es la dirección que el router le asignó a tu PC (ej. 192.168.1.15). Sirve para probar que tu tarjeta de red física esté activa.",
+    "ping [IP-Gateway]: Si falla, el problema está en el cable o el router mismo (conexión interna de la casa).",
+    "ping 8.8.8.8: Si falla, el problema es externo (tu proveedor de internet).",
+    "ping google.com: Si falla aquí, pero el paso anterior funcionó, el problema es el DNS."
+  ],
+  "commands": [
+    "ping 127.0.0.1",
+    "ping [Tu Dirección IPv4]",
+    "ping [IP-Gateway]",
+    "ping 8.8.8.8",
+    "ping google.com"
+  ],
+  "notes": "",
+  "tags": ["ping", "red", "diagnostico", "conectividad"]
+},
+{
+  "id": "wifi-roaming-soluciones",
+  "title": "Cómo implementar soluciones de Roaming (Orden IT)",
+  "category": "wifi",
+  "symptoms": "",
+  "checklist": [
+    "Mismo SSID y Contraseña: * Implementación: Ingresa a la interfaz web de cada extensor/punto de acceso (AP) y asegúrate de que el nombre (SSID), el tipo de seguridad (ej. WPA2-AES) y la clave sean idénticos al router principal.",
+    "Por qué primero: Es el requisito básico para que el dispositivo considere que es \"la misma red\".",
+    "Configurar el \"Roaming Aggressiveness\": * Implementación: En Windows, ve a Administrador de Dispositivos > Adaptadores de red > Clic derecho en tu tarjeta Wi-Fi > Propiedades > Opciones avanzadas. Busca \"Agresividad de itinerancia\" y súbelo a \"Máximo\".",
+    "Por qué segundo: Es una solución de software gratuita que fuerza al cliente a dejar de ser \"pegajoso\".",
+    "Ajustar la potencia de transmisión (Transmit Power): * Implementación: En la configuración avanzada del router/AP, busca \"Transmit Power\". Si están muy cerca, baja la potencia de 100% a 75% o 50%.",
+    "Por qué tercero: Ayuda a \"dibujar\" mejor las fronteras de cada antena para que no se solapen excesivamente.",
+    "Migrar a tecnología Mesh: * Implementación: Reemplazar routers viejos y repetidores por un sistema de malla. Estos usan protocolos (802.11k/v/r) que obligan al dispositivo a cambiar al punto más cercano de forma transparente.",
+    "Por qué al final: Requiere inversión en hardware nuevo, pero es la solución definitiva y más estable."
+  ],
+  "commands": [],
+  "notes": "",
+  "tags": ["wifi", "roaming", "mesh", "cobertura"]
+},
+{
+  "id": "wifi-alta-densidad-qos",
+  "title": "Gestión de Redes de Alta Densidad y QoS",
+  "category": "wifi",
+  "symptoms": "",
+  "checklist": [
+    "Limitar Dispositivos por Access Point (Client Limiting):",
+    "En la configuración del SSID o del Radio, busca la opción \"Max Clients\" o \"Client Limit\".",
+    "band steering:",
+    "Activa Band Steering. Esto \"empuja\" a los dispositivos que soportan 5GHz a esa banda, dejando la de 2.4GHz solo para dispositivos viejos o que están muy lejos.",
+    "Reducción del Ancho de Canal (Channel Width)",
+    "Parece contradictorio, pero para manejar más usuarios, a veces es mejor usar un ancho de canal menor (ej. pasar de 40MHz o 80MHz a 20MHz)."
+  ],
+  "commands": [],
+  "notes": "",
+  "tags": ["wifi", "qos", "alta densidad", "ap"]
+},
+{
+  "id": "rendimiento-task-manager",
+  "title": "Chequeo rendimiento tareas",
+  "category": "pc",
+  "symptoms": "",
+  "checklist": [
+    " Disco 100% → hardware / updates",
+    " RAM 100% → cerrar apps",
+    " CPU 100% → ver proceso",
+    " Todo normal → reiniciar"
+  ],
+  "commands": [],
+  "notes": "",
+  "tags": ["pc", "rendimiento", "task manager"]
+}
+
+]

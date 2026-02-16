@@ -1,0 +1,16 @@
+.runbook-card, 
+.runbook-card:visited {
+  color: white; 
+  text-decoration: none;
+}
+
+.runbook-card div {
+  padding: 12px;
+  background: #141414;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.runbook-card:hover div {
+  background: #222; 
+}

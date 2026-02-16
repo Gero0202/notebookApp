@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.item {
+  padding: 16px;
+  background: #000000;
+  border-radius: 10px;
+  border: 1px solid #1f1f1f;
+  text-decoration: none;
+  color: aliceblue;
+  display: block; /* Asegura que todo el recuadro sea clickeable */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Forzamos que en cualquier estado el color sea el mismo */
+.item:visited,
+.item:hover,
+.item:active {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+
+

@@ -1,0 +1,36 @@
+.container {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 1px;
+  border: none;
+  background: #141414;
+  color: white;
+
+  font-size: 16px; /* ← esto evita el zoom */
+}
+
+
+.results {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.container {
+  position: sticky;
+  top: 0;
+  background: #0b0b0b;
+  padding-bottom: 0px;
+  z-index: 10;
+}
+
+.titles{
+  text-decoration: none;
+  color: #72f06e;
+}
+
