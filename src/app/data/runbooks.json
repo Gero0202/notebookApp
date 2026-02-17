@@ -306,6 +306,95 @@
   "commands": [],
   "notes": "",
   "tags": ["pc", "rendimiento", "task manager"]
+},
+{
+  "id": "impresora-reiniciar-spooler",
+  "title": "Reiniciar cola impresion",
+  "category": "pc",
+  "symptoms": "Impresion trabada o cola que no se puede limpiar",
+  "checklist": [
+    "Abrir CMD como Administrador",
+    "net stop spooler",
+    "Ir a C:\\Windows\\System32\\spool\\PRINTERS",
+    "Borrar todos los archivos de la carpeta",
+    "net start spooler",
+    "Verificar que la cola quede limpia y probar imprimir"
+  ],
+  "commands": [
+    "net stop spooler",
+    "net start spooler"
+  ],
+  "notes": "Se usa cuando hay documentos trabados en la cola de impresion y no se pueden cancelar desde Windows",
+  "tags": ["impresora", "spooler", "windows", "cola impresion"]
+},
+{
+  "id": "comando-net-guia",
+  "title": "Comando NET guia",
+  "category": "commands",
+  "symptoms": "Administrar servicios, usuarios, red y recursos en Windows desde linea de comandos",
+  "checklist": [
+    "Gestion de servicios: net start (listar servicios en ejecucion)",
+    "Gestion de servicios: net stop [nombre] (detener servicio — usar comillas si tiene espacios)",
+    "Caso comun: reiniciar servicio si hay fallas (ej: dot3svc para red)",
+    "Administracion de usuarios: net user [nombre] [clave] /add (crear usuario)",
+    "Administracion de usuarios: net user [nombre] /delete (eliminar usuario)",
+    "Administracion de usuarios: net user [nombre] /active:no (desactivar cuenta)",
+    "Administracion de usuarios: net user [nombre] (ver informacion)",
+    "Recursos compartidos: net share (ver carpetas compartidas)",
+    "Recursos compartidos: net share Nombre=Ruta (crear share)",
+    "Recursos compartidos: net share Nombre /delete (eliminar share)",
+    "Unidades de red: net use Z: \\\\IP\\Carpeta (mapear unidad)",
+    "Unidades de red: net use Z: /delete (desconectar unidad)",
+    "Impresoras red: net use LPT1: \\\\IP_IMPRESORA\\Nombre (mapear impresora)",
+    "Grupos: net localgroup administrators (ver administradores)",
+    "Grupos: net localgroup administrators [usuario] /add (hacer admin)",
+    "Red: net view (ver equipos en red)",
+    "Red: net view \\\\Equipo (ver recursos de equipo)",
+    "Sesiones: net session (ver conexiones activas)",
+    "Estadisticas: net statistics server (info de uso y uptime)",
+    "Si aparece Error de sistema 5 → ejecutar CMD como administrador"
+  ],
+  "commands": [
+    "net start",
+    "net stop",
+    "net user",
+    "net share",
+    "net use",
+    "net localgroup",
+    "net view",
+    "net session",
+    "net statistics server"
+  ],
+  "notes": "El comando NET es una herramienta clave para troubleshooting avanzado en Windows cuando la interfaz grafica falla",
+  "tags": ["net", "windows", "administracion", "red", "comandos"]
+},
+{
+  "id": "netsh-wlan-show-interfaces",
+  "title": "netsh wlan interfaces",
+  "category": "commands",
+  "symptoms": "Diagnosticar estado WiFi, calidad de señal y conexion al router",
+  "checklist": [
+    "Abrir CMD",
+    "Ejecutar: netsh wlan show interfaces",
+    "Si aparece error wlansvc no ejecutandose → abrir services.msc",
+    "Buscar Configuracion automatica de WLAN",
+    "Iniciar servicio y poner inicio en Automatico",
+    "Verificar SSID para confirmar red conectada",
+    "Revisar BSSID para identificar AP o repetidor",
+    "Revisar Radio type para saber tecnologia WiFi",
+    "Revisar Channel para detectar posibles interferencias",
+    "Revisar Receive/Transmit rate para ver enlace con router",
+    "Revisar Signal para evaluar calidad de señal",
+    "Confirmar banda (2.4GHz o 5GHz)",
+    "Usar para detectar cliente pegajoso o roaming incorrecto"
+  ],
+  "commands": [
+    "netsh wlan show interfaces",
+    "services.msc"
+  ],
+  "notes": "Este comando muestra informacion en tiempo real sobre la conexion WiFi. A diferencia de ipconfig que muestra configuracion IP, netsh wlan muestra la calidad de radio y enlace",
+  "tags": ["wifi", "netsh", "diagnostico", "signal", "roaming"]
 }
+
 
 ]
